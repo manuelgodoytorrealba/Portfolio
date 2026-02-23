@@ -1,1 +1,28 @@
-<p>contact works!</p>
+<section class="hero card">
+  <h1>Contacto</h1>
+  <p>
+    Actualmente abierto a oportunidades frontend (Madrid / Remote EU).
+  </p>
+</section>
+
+<section class="grid">
+  <article class="card contact-card" *ngFor="let l of links">
+    <div>
+      <h3>{{ l.label }}</h3>
+      <p class="subtitle">{{ l.subtitle }}</p>
+    </div>
+
+    <a class="btn primary" [href]="l.url" target="_blank">
+      Ir →
+    </a>
+  </article>
+</section>
+
+<section class="card download">
+  <h2>CV descargable</h2>
+  <p>Puedes descargar una versión PDF optimizada para recruiters.</p>
+
+  <a class="btn primary" href="/cv.pdf" target="_blank">
+    Descargar CV
+  </a>
+</section>

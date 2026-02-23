@@ -1,1 +1,75 @@
-<p>cv works!</p>
+<section class="hero card">
+  <div class="top">
+    <div>
+      <h1>{{ header.name }}</h1>
+      <p class="subtitle">{{ header.subtitle }}</p>
+    </div>
+
+    <div class="cta">
+      <a class="btn primary" routerLink="/projects">Ver proyectos</a>
+      <a class="btn" routerLink="/contact">Contacto</a>
+    </div>
+  </div>
+
+  <ul class="summary">
+    <li *ngFor="let s of header.summary">{{ s }}</li>
+  </ul>
+</section>
+
+<section class="grid">
+  <div class="card">
+    <h2>Highlights</h2>
+    <div class="kpis">
+      <div class="kpi" *ngFor="let h of highlights">
+        <div class="kpiLabel">{{ h.label }}</div>
+        <div class="kpiValue">{{ h.value }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Skills</h2>
+    <div class="chips">
+      <span class="chip" *ngFor="let s of skills">{{ s }}</span>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Experiencia</h2>
+
+  <div class="timeline">
+    <article class="item" *ngFor="let e of experience">
+      <div class="dot"></div>
+
+      <div class="content">
+        <div class="row">
+          <div>
+            <h3>{{ e.role }}</h3>
+            <p class="meta">
+              {{ e.company }} · {{ e.period }}
+              <span *ngIf="e.location">· {{ e.location }}</span>
+            </p>
+          </div>
+        </div>
+
+        <ul class="bullets">
+          <li *ngFor="let b of e.bullets">{{ b }}</li>
+        </ul>
+
+        <div class="chips small">
+          <span class="chip" *ngFor="let t of e.tags">{{ t }}</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="end card">
+  <h2>¿Siguiente paso?</h2>
+  <p>Si quieres, puedo adaptar esta info a una oferta concreta y dejarlo perfecto para recruiters.</p>
+  <div class="cta">
+    <a class="btn primary" routerLink="/contact">Hablemos</a>
+    <a class="btn" routerLink="/projects">Ver proyectos</a>
+  </div>
+</section>

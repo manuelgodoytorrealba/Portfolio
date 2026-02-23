@@ -1,0 +1,162 @@
+h1 {
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.summary {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.grid {
+  display: grid;
+  gap: 14px;
+  margin: 14px 0;
+}
+
+@media (min-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+h2 {
+  margin: 0 0 14px;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.kpis {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 860px) {
+  .kpis {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.kpi {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff;
+}
+
+.kpiLabel {
+  font-weight: 600;
+}
+
+.kpiValue {
+  margin-top: 6px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips.small .chip {
+  padding: 5px 9px;
+  font-size: 12px;
+}
+
+.chip {
+  font-size: 13px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+}
+
+.timeline {
+  display: grid;
+  gap: 16px;
+  position: relative;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  margin-top: 7px;
+  position: relative;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  width: 2px;
+  height: 100%;
+  background: var(--border);
+  transform: translateX(4px);
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.meta {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.bullets {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.end p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.end .cta {
+  margin-top: 12px;
+}

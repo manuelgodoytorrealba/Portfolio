@@ -1,0 +1,49 @@
+h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  gap: 14px;
+  margin: 14px 0;
+}
+
+@media (min-width: 860px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.contact-card h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.download h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.download p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}

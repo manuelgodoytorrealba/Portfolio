@@ -1,12 +1,19 @@
 <header class="topbar">
-  <nav class="nav">
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-    <a routerLink="/cv" routerLinkActive="active">CV</a>
-    <a routerLink="/projects" routerLinkActive="active">Proyectos</a>
-    <a routerLink="/contact" routerLinkActive="active">Contacto</a>
-  </nav>
+  <div class="inner">
+    <div class="logo">
+      <span class="dot"></span>
+      <span>Manuel Godoy</span>
+    </div>
+
+    <nav>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/cv" routerLinkActive="active">CV</a>
+      <a routerLink="/projects" routerLinkActive="active">Proyectos</a>
+      <a routerLink="/contact" routerLinkActive="active">Contacto</a>
+    </nav>
+  </div>
 </header>
 
-<main class="content">
+<main class="container">
   <router-outlet></router-outlet>
 </main>
