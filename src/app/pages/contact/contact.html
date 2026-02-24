@@ -1,3 +1,13 @@
+<!-- Breadcrumbs -->
+<nav class="breadcrumbs">
+  <a routerLink="/">Home</a>
+  <span>/</span>
+  <span>CV</span>
+  <span>/</span>
+  <span>Projects</span>
+  <span>/</span>
+  <span class="current">Contact</span>
+</nav>
 <section class="hero card">
   <h1>Contacto</h1>
   <p>
@@ -20,9 +30,15 @@
 
 <section class="card download">
   <h2>CV descargable</h2>
-  <p>Puedes descargar una versión PDF optimizada para recruiters.</p>
+  <p>Selecciona el idioma:</p>
 
-  <a class="btn primary" href="/cv.pdf" target="_blank">
-    Descargar CV
-  </a>
+  <div class="download-buttons">
+    <a class="btn primary" href="/cv/Manuel_Godoy_CV_EN.pdf" download>
+      🇬🇧 Download (English)
+    </a>
+
+    <a class="btn" href="/cv/Manuel_Godoy_CV_ES.pdf" download>
+      🇪🇸 Descargar (Español)
+    </a>
+  </div>
 </section>

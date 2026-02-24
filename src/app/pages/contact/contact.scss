@@ -47,3 +47,31 @@ h1 {
   margin: 0 0 14px;
   color: var(--muted);
 }
+
+/* Breadcrumbs */
+.breadcrumbs {
+  font-size: 0.85rem;
+  color: #8a8a8a;
+  margin-bottom: 1.5rem;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .current {
+    color: #333;
+    font-weight: 500;
+  }
+
+  span {
+    margin: 0 6px;
+  }
+}
+
+.download-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}

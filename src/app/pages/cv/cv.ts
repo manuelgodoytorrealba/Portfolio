@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SeoService } from '../../shared/seo.service';
 
 type Experience = {
   role: string;
@@ -18,7 +19,17 @@ type Experience = {
   templateUrl: './cv.html',
   styleUrl: './cv.scss',
 })
-export class CvComponent {
+export class CvComponent implements OnInit {
+  constructor(private seo: SeoService) {}
+
+  ngOnInit(): void {
+    this.seo.setSeo({
+      title: 'CV · Manuel Godoy',
+      description:
+        'Frontend Engineer focused on UI architecture, design systems, performance and production-ready delivery. Enterprise experience (Globant · Iberia).',
+    });
+  }
+
   header = {
     title: 'CV',
     name: 'Manuel Godoy',

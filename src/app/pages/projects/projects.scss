@@ -88,3 +88,36 @@ h2 {
   flex-wrap: wrap;
   margin-top: 2px;
 }
+
+/* Breadcrumbs */
+.breadcrumbs {
+  font-size: 0.85rem;
+  color: #8a8a8a;
+  margin-bottom: 1.5rem;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .current {
+    color: #333;
+    font-weight: 500;
+  }
+
+  span {
+    margin: 0 6px;
+  }
+}
+
+/* Meta text */
+.projects-meta {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.75rem;
+}
+
+/* Espaciado general */
+.header {
+  margin-bottom: 2rem;
+}

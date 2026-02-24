@@ -140,3 +140,31 @@
     max-width: 70ch;
   }
 }
+
+/* Breadcrumbs */
+.breadcrumbs {
+  font-size: 0.85rem;
+  color: #8a8a8a;
+  margin-bottom: 1.5rem;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .current {
+    color: #333;
+    font-weight: 500;
+  }
+
+  span {
+    margin: 0 6px;
+  }
+}
+
+.featureCard .actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}

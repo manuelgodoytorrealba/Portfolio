@@ -1,7 +1,17 @@
 <section class="hero">
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs">
+    <a class="current" routerLink="/">Home</a>
+    <span>/</span>
+    <span>CV</span>
+    <span>/</span>
+    <span>Projects</span>
+    <span>/</span>
+    <span>Contact</span>
+  </nav>
   <h1>
     Frontend Engineer<br />
-    especializado en <span class="highlight">React & Angular</span>
+    especializado en <span class="highlight">React, Svelte & Angular</span>
   </h1>
 
   <p>
@@ -48,23 +58,25 @@
   </div>
 
   <div class="featuredGrid">
-    <article class="featureCard">
-      <h3>MagiNails</h3>
-      <p>Booking flow + WhatsApp. Enfocado en performance y SEO local.</p>
-      <div class="tags">
-        <span class="tag">Booking</span>
-        <span class="tag">SEO</span>
-        <span class="tag">UI</span>
-      </div>
-    </article>
+    <article class="featureCard" *ngFor="let p of featuredProjects">
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.description }}</p>
 
-    <article class="featureCard">
-      <h3>DIES</h3>
-      <p>Catálogo e-commerce con Supabase y despliegue moderno.</p>
       <div class="tags">
-        <span class="tag">SvelteKit</span>
-        <span class="tag">Supabase</span>
-        <span class="tag">Vercel</span>
+        <span class="tag" *ngFor="let t of p.tags">{{ t }}</span>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" *ngIf="p.links && p.links.length > 0" [href]="p.links[0].url" target="_blank"
+          rel="noreferrer">
+          {{ p.links[0].label }}
+        </a>
+
+        <ng-container *ngFor="let l of (p.links || []); let i = index">
+          <a *ngIf="i > 0" class="btn" [href]="l.url" target="_blank" rel="noreferrer">
+            {{ l.label }}
+          </a>
+        </ng-container>
       </div>
     </article>
   </div>

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SeoService } from '../../shared/seo.service';
 
 type ProjectLink = { label: string; url: string };
 type Project = {
@@ -8,7 +9,7 @@ type Project = {
   description: string;
   stack: string[];
   links: ProjectLink[];
-  highlight?: string; // “Impact”, “SEO”, “Booking”, etc.
+  highlight?: string;
 };
 
 @Component({
@@ -18,7 +19,17 @@ type Project = {
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
+  constructor(private seo: SeoService) {}
+
+  ngOnInit(): void {
+    this.seo.setSeo({
+      title: 'Proyectos · Manuel Godoy',
+      description:
+        'Selected work: MagiNails (booking + WhatsApp), DIES (SvelteKit + Supabase + admin dashboard), Angular Portfolio SPA (standalone + SSR).',
+    });
+  }
+
   projects: Project[] = [
     {
       title: 'MagiNails',
@@ -37,48 +48,25 @@ export class ProjectsComponent {
       subtitle: 'Sneaker Catalog Platform',
       highlight: 'Arquitectura moderna',
       description:
-        'Aplicación web moderna construida con SvelteKit enfocada en catálogo tipo e-commerce. Implementa autenticación, rutas protegidas y arquitectura modular preparada para despliegue en producción.',
-      stack: [
-        'SvelteKit',
-        'TypeScript',
-        'Supabase',
-        'SSR',
-        'Docker',
-        'Kubernetes',
-        'Vercel'
-      ],
+        'Plataforma construida con SvelteKit + Supabase con autenticación y SSR. Incluye panel admin para subir/editar productos y dashboard básico para estadísticas de leads.',
+      stack: ['SvelteKit', 'TypeScript', 'Supabase', 'SSR', 'Docker', 'Kubernetes', 'Vercel'],
       links: [
-        {
-          label: 'Live',
-          url: 'https://dies-web.vercel.app/catalog'
-        },
-        {
-          label: 'GitHub',
-          url: 'https://github.com/manuelgodoytorrealba/dies-web'
-        }
+        { label: 'Live', url: 'https://dies-web.vercel.app/catalog' },
+        { label: 'GitHub', url: 'https://github.com/manuelgodoytorrealba/dies-web' },
       ],
     },
     {
-  title: 'Angular Portfolio SPA',
-  subtitle: 'Standalone + SSR Architecture',
-  highlight: 'Angular moderno',
-  description:
-    'SPA desarrollada con Angular standalone components y routing lazy-loaded. Arquitectura modular con layout shell, separación por páginas y estructura preparada para SSR e hidratación.',
-  stack: [
-    'Angular',
-    'TypeScript',
-    'Standalone Components',
-    'Lazy Loading',
-    'Routing',
-    'SSR',
-    'SCSS'
-  ],
-  links: [
-    {
-      label: 'GitHub',
-      url: 'https://github.com/manuelgodoytorrealba/Portfolio'
-    }
-  ]
-}
+      title: 'Angular Portfolio SPA',
+      subtitle: 'Standalone + SSR Architecture',
+      highlight: 'Angular moderno',
+      description:
+        'SPA con componentes standalone y routing lazy-loaded. Arquitectura modular con layout shell, páginas separadas y configuración preparada para SSR e hidratación.',
+      stack: ['Angular', 'TypeScript', 'Standalone Components', 'Lazy Loading', 'Routing', 'SSR', 'SCSS'],
+      links: [{ label: 'GitHub', url: 'https://github.com/manuelgodoytorrealba/Portfolio' }],
+    },
   ];
+
+  get projectsCount(): number {
+    return this.projects.length;
+  }
 }

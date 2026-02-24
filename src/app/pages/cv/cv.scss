@@ -107,6 +107,8 @@ h2 {
   grid-template-columns: 22px 1fr;
   gap: 14px;
   align-items: flex-start;
+  position: relative;
+  z-index: 1;
 }
 
 .dot {
@@ -115,18 +117,25 @@ h2 {
   border-radius: 999px;
   background: linear-gradient(135deg, #2563eb, #7c3aed);
   margin-top: 7px;
-  position: relative;
+  z-index: 1; /* que quede encima de la línea */
 }
 
-.item::before {
+
+.timeline {
+  display: grid;
+  gap: 16px;
+  position: relative;
+  padding-left: 2px; /* pequeño ajuste para alinear */
+}
+
+.timeline::before {
   content: "";
   position: absolute;
-  left: 4px;
+  top: 8px;           /* empieza un poco debajo del título */
+  bottom: 8px;        /* termina antes del final */
+  left: 9px;          /* alinea con el centro del dot */
   width: 2px;
-  height: 100%;
   background: var(--border);
-  transform: translateX(4px);
-  z-index: 0;
 }
 
 .content {
@@ -159,4 +168,25 @@ h3 {
 
 .end .cta {
   margin-top: 12px;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  font-size: 0.85rem;
+  color: #8a8a8a;
+  margin-bottom: 1.5rem;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .current {
+    color: #333;
+    font-weight: 500;
+  }
+
+  span {
+    margin: 0 6px;
+  }
 }
