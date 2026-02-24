@@ -217,3 +217,65 @@
   color: var(--text);
   text-decoration: underline;
 }
+
+@media (max-width: 600px) {
+  .hero {
+    margin: 6px 0 12px;
+    max-width: 100%;
+
+    p {
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+  }
+
+  /* Breadcrumbs: en móvil ocupan mucho y no aportan tanto */
+  .breadcrumbs {
+    margin-bottom: 10px;
+    font-size: 12px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Mini-cards: 2 columnas en móvil (se siente mucho más “app”) */
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Featured: 1 columna */
+  .featuredGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Acciones dentro de featureCard: no full width, mejor compact */
+  .featureCard .actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .featureCard .btn {
+    width: auto; /* override del global */
+  }
+
+  /* Contact CTA botones: sí full width (mejor UX) */
+  .contact-cta__top .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .contact-cta__top .btn {
+    width: 100%;
+  }
+}
+
+/* Ajuste intermedio: móviles grandes / tablets pequeñas */
+@media (min-width: 601px) and (max-width: 860px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featuredGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

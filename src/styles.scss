@@ -67,3 +67,33 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
+
+/* Mobile-first improvements */
+@media (max-width: 600px) {
+  .container {
+    padding: 18px 16px; /* <- esto es clave: antes seguías con 40px arriba */
+  }
+
+  .card {
+    padding: 16px; /* cards más compactas en móvil */
+    border-radius: 14px;
+  }
+
+  h1 {
+    font-size: 34px !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.03em;
+  }
+
+  /* Botones en móvil: mejor grid */
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
