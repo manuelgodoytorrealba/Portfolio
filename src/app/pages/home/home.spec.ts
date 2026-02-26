@@ -35,7 +35,7 @@ describe('HomeComponent', () => {
 
     const text = h1!.textContent!.replace(/\s+/g, ' ').trim();
     expect(text).toContain('Frontend Engineer');
-    expect(text).toContain('React, Svelte & Angular');
+    expect(text).toContain('Angular, React & Svelte');
   });
 
   it('should call SeoService.setSeo on init', () => {
